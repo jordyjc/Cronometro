@@ -1,0 +1,53 @@
+<!--
+  Generated template for the Ventana1Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+        
+        <ion-title text-center>Cronómetro</ion-title>
+      </ion-navbar>
+</ion-header>
+
+
+<ion-content padding >
+
+  <div >
+    <label > 
+        <h2 ion-text color="default" text-center>
+          {{hora2}}{{hora}} : {{minutos2}}{{minutos}} : {{segundos2}}{{segundos}}
+       </h2>
+      </label>
+    <div>
+        <button (click)="start(tap)" ion-button color="secondary" outline round>Empieza</button>
+        <button (click)="lapso(hora,minutos,segundos)" ion-button color="dark" outline round>Lapso</button>
+        <button (click)="stop()" ion-button color="danger" outline round>Para</button>
+    </div>
+
+    <div>
+        <ion-item (tap)="tapEvent($event)">
+            {{tap}} veces 
+          <button (click)="pause()" ion-button color="secondary" outline round>Pause</button>
+  
+        </ion-item>
+    </div>
+    
+    <div text-left>
+        <label *ngFor="let cole of coleccion ">
+          <p>
+            {{cole.hora2}}{{cole.hora}} : 
+            {{cole.minuto2}}{{cole.minuto}} : 
+            {{cole.segundo2}}{{cole.segundo}}
+          </p>
+          </label>
+      </div>
+
+  </div>
+
+
+
+  
+  
+</ion-content>
